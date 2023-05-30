@@ -1,0 +1,66 @@
+{
+  "name": "kafka-lz4-lite",
+  "version": "1.0.0",
+  "description": "Pure JS Kafka LZ4 codec for kafkajs",
+  "module": "dist/esm/index.js",
+  "main": "dist/cjs/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    },
+    "./worker": {
+      "import": "./dist/esm/worker.js",
+      "require": "./dist/cjs/worker.js"
+    }
+  },
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "rimraf dist && tsc && rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alex-vukov/kafka-lz4-lite.git"
+  },
+  "keywords": [
+    "kafka",
+    "kafkajs",
+    "lz4",
+    "lz4js",
+    "codec",
+    "compression",
+    "decompression"
+  ],
+  "author": "Alexander Vukov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alex-vukov/kafka-lz4-lite/issues"
+  },
+  "homepage": "https://github.com/alex-vukov/kafka-lz4-lite#readme",
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@babel/cli": "^7.18.10",
+    "@babel/core": "^7.18.10",
+    "@babel/plugin-transform-runtime": "^7.18.10",
+    "@babel/preset-env": "^7.18.10",
+    "@babel/preset-typescript": "^7.18.6",
+    "@rollup/plugin-babel": "^5.3.1",
+    "@rollup/plugin-commonjs": "^22.0.2",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@types/estree": "^1.0.0",
+    "@types/node": "^20.2.5",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.78.1",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.18.9",
+    "lz4js": "^0.2.0",
+    "piscina": "^3.2.0"
+  },
+  "peerDependencies": {
+    "kafkajs": "^2.0.0"
+  }
+}
