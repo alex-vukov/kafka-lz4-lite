@@ -17,12 +17,13 @@
   "typesVersions": {
     "*": {
       "worker": [
-        "./dist/worker.d.ts"],
+        "./dist/worker.d.ts"
+      ],
       "*": [
         "./dist/index.d.ts"
       ]
     }
-  },  
+  },
   "scripts": {
     "build": "rimraf dist && tsc && rollup -c"
   },
