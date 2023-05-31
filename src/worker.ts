@@ -3,7 +3,7 @@ import path from "path";
 
 export type CreateOptions = NonNullable<ConstructorParameters<typeof Piscina>[0]>;
 
-export const createCodec = (options: Omit<CreateOptions, "filename"> | undefined) => {
+export const createCodec = (options?: Omit<CreateOptions, "filename">) => {
   const piscina = new Piscina({ ...options, filename: path.resolve(__dirname, "do_work.js") });
 
   return () => ({
