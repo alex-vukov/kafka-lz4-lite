@@ -1,9 +1,9 @@
 import Piscina from "piscina";
 import path from "path";
 
-export type CreateOptions = Omit<ConstructorParameters<typeof Piscina>[0], "filename">;
+export type CreateOptions = NonNullable<ConstructorParameters<typeof Piscina>[0]>;
 
-export const createCodec = (options: CreateOptions) => {
+export const createCodec = (options: Omit<CreateOptions,"filename">) => {
   const piscina = new Piscina({ ...options, filename: path.resolve(__dirname, "do_work.js") });
 
   return () => ({
