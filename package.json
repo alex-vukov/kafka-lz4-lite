@@ -14,7 +14,14 @@
       "require": "./dist/cjs/worker.js"
     }
   },
-  "types": "dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/index.d.ts",
+        "./dist/*"
+      ]
+    }
+  },
   "scripts": {
     "build": "rimraf dist && tsc && rollup -c"
   },
