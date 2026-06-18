@@ -1,4 +1,4 @@
-import { compress, decompress } from "lz4js";
+import { compress, decompress } from 'lz4-lite';
 
 export const codec = () => ({
   compress: (encoder: { buffer: Buffer }) => {

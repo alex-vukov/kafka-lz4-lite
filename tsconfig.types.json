@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "rootDir": "src",
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "removeComments": false,
+    "declarationDir": "dist/types"
+  },
+  "include": ["src/index.ts", "src/worker.ts"]
+}

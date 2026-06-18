@@ -1,9 +1,5 @@
-import lz4js from "lz4js";
+import { compress as lz4Compress, decompress as lz4Decompress } from 'lz4-lite';
 
-export const compress = function ({ buffer }: { buffer: Buffer | Uint8Array }) {
-  return lz4js.compress(buffer);
-};
+export const compress = ({ buffer }: { buffer: Buffer | Uint8Array }) => lz4Compress(buffer);
 
-export const decompress = function ({ buffer }: { buffer: Buffer | Uint8Array }) {
-  return lz4js.decompress(buffer);
-};
+export const decompress = ({ buffer }: { buffer: Buffer | Uint8Array }) => lz4Decompress(buffer);
