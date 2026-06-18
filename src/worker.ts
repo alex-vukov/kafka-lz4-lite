@@ -1,20 +1,8 @@
-import Piscina from "piscina";
-import path from "path";
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { type CreateOptions, createCodecImpl } from './worker.impl.js';
 
-export type CreateOptions = NonNullable<ConstructorParameters<typeof Piscina>[0]>;
+export type { CreateOptions };
 
-export const createCodec = (options?: Omit<CreateOptions, "filename">) => {
-  const piscina = new Piscina({ ...options, filename: path.resolve(__dirname, "do_work.js") });
-
-  return () => ({
-    compress: async (encoder: { buffer: Buffer }) => {
-      const compressed = await piscina.run({ buffer: encoder.buffer }, { name: "compress" });
-      return Buffer.from(compressed);
-    },
-
-    decompress: async (buffer: Buffer) => {
-      const decompressed = await piscina.run({ buffer }, { name: "decompress" });
-      return Buffer.from(decompressed);
-    },
-  });
-};
+export const createCodec = (options?: Omit<CreateOptions, 'filename'>) =>
+  createCodecImpl(path.dirname(fileURLToPath(import.meta.url)), options);

@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "rootDir": "src",
+    "outDir": "dist/cjs"
+  },
+  "include": ["src/index.ts", "src/do_work.ts", "src/worker.impl.ts", "src/worker-entry.cjs.ts"]
+}
