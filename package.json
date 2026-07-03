@@ -57,15 +57,15 @@
     "node": ">=16"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.5.0",
+    "@biomejs/biome": "2.5.2",
     "@types/node": "^22.0.0",
     "kafkajs": "^2.2.4",
     "tsx": "^4.19.0",
     "typescript": "^5.6.0"
   },
   "dependencies": {
-    "lz4-lite": "^1.1.1",
-    "piscina": "4.9.2"
+    "lz4-lite": "^1.1.2",
+    "piscina": "4.9.3"
   },
   "peerDependencies": {
     "kafkajs": "^2.0.0"
